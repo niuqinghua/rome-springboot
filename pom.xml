@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>rome.springboot</groupId>
+	<artifactId>rome-springboot-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>rome-springboot-parent</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<spring.boot.version>1.1.8.RELEASE</spring.boot.version>
+		<commons-lang3.version>3.3.2</commons-lang3.version>
+		<dozer.version>5.5.1</dozer.version>
+		<logback.ext.spring.version>0.1.1</logback.ext.spring.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>rome-springboot-web</module>
+		<module>rome-springboot-service</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-parent</artifactId>
+				<version>${spring.boot.version}</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+			<dependency>
+			    <groupId>org.logback-extensions</groupId>
+			    <artifactId>logback-ext-spring</artifactId>
+			    <version>${logback.ext.spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+            <dependency>
+                <groupId>net.sf.dozer</groupId>
+                <artifactId>dozer</artifactId>
+                <version>${dozer.version}</version>
+            </dependency>
+		</dependencies>
+	</dependencyManagement>
+
+</project>
